@@ -1,27 +1,9 @@
 import React, { Component } from 'react';
-import {fetchBlogPosts} from '../actions/blogPostActions';
 
-export default class List extends Component {
+export default class Table extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            blogPosts: []
-        };
-    };
-
-    componentDidMount() {
-        fetchBlogPosts()
-            .then((data) => {
-                this.setState(state => {
-                    state.blogPosts = data;
-                    return state;
-                })
-            })
-            .catch((err) => {
-                console.error('err', err);
-            });
     };
 
     render() {
@@ -37,7 +19,7 @@ export default class List extends Component {
                     </thead>
                     <tbody>
 
-                    {this.props.blogPosts && this.props.blogPosts.map((post) => {
+                    {this.props.blogPosts && this.props.blogPosts.map(post => {
                         return (
                             <tr key={post.id}>
                                 <td>{post.id}</td>
