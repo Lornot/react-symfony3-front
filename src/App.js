@@ -14,8 +14,8 @@ export default class App extends Component {
                     <IndexRedirect to="/posts"/>
                 </Route>
                 <Route path="/posts" component={List} />
-                <Route path="/posts/create" component={Create} />
-                <Route path="/posts/update/:postId" component={Update} />
+                <Route path="/posts/create" component={withRouter(Create)} />
+                <Route path="/posts/update/:postId" component={withRouter(Update)} />
                 <Route path="*" component={NotFoundPage} />
             </Router>
         );

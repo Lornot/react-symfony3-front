@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {fetchBlogPosts, deleteBlogPost} from '../../actions/blogPostActions';
 import Table from '../../components/Table';
+import { Link } from 'react-router';
 
 export default class List extends Component {
 
@@ -47,6 +48,7 @@ export default class List extends Component {
                 <Table blogPosts={this.state.blogPosts}
                        onDelete={this.onDelete.bind(this)}
                 />
+                <Link to="/posts/create" className="btn btn-lg btn-success" >Create</Link>
             </div>
         );
     }

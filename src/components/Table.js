@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router';
 export default class Table extends Component {
 
     constructor(props) {
@@ -31,7 +31,7 @@ export default class Table extends Component {
                                 <td>{post.id}</td>
                                 <td>{post.title}</td>
                                 <td>
-                                    <a href="" className="btn btn-default btn-sm">Edit</a>
+                                    <Link to={`/posts/update/${post.id}`} className="btn btn-default btn-sm">Edit</Link>
                                     <btn onClick={this.deleteHandler.bind(this, post.id)} className="btn btn-danger btn-sm">Delete</btn>
                                 </td>
                             </tr>);

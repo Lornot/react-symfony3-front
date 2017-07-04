@@ -4,9 +4,20 @@ import { createBlogPost } from '../../actions/blogPostActions';
 
 export default class Create extends Component {
 
+    constructor(props) {
+        super(props);
+
+        console.log(props.route);
+
+    };
+
     handleSubmit(data) {
-        createBlogPost(data);
-        console.log('form submission data', data);
+
+
+        createBlogPost(data)
+        .then(res => {
+            this.props.route.push("/").bind(this);
+        });
     }
 
     render() {

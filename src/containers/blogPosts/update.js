@@ -22,7 +22,10 @@ const Update = React.createClass ({
             })
     },
     handleSubmit(data) {
-        updateBlogPost(this.state.blogPost.id, data);
+        updateBlogPost(this.state.blogPost.id, data)
+        .then(res => {
+            this.props.router.push('/');
+        });
     },
     render() {
         return (
