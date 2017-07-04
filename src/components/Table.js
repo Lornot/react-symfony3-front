@@ -6,6 +6,12 @@ export default class Table extends Component {
         super(props);
     };
 
+    deleteHandler(id, e) {
+        console.log(id);
+        e.preventDefault();
+        this.props.onDelete(id)
+    };
+
     render() {
         return (
             <div>
@@ -26,7 +32,7 @@ export default class Table extends Component {
                                 <td>{post.title}</td>
                                 <td>
                                     <a href="" className="btn btn-default btn-sm">Edit</a>
-                                    <a href="" className="btn btn-danger btn-sm">Delete</a>
+                                    <btn onClick={this.deleteHandler.bind(this, post.id)} className="btn btn-danger btn-sm">Delete</btn>
                                 </td>
                             </tr>);
                     })}

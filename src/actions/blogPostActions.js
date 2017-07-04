@@ -41,3 +41,11 @@ export function updateBlogPost(id, data) {
         return res;
     }).catch(err => err);
 }
+
+export function deleteBlogPost(id) {
+    return fetch('http://sa/web/app_dev.php/delete/' + id, {
+        method: 'DELETE',
+        mode: 'CORS'
+    }).then(res => res)
+    .catch(err => err);
+}
