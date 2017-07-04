@@ -17,7 +17,4 @@ export default class Create extends Component {
         );
     }
 
-
-
-
 }

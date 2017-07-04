@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
 export function fetchBlogPost(id) {
-    return fetch('http://sa/web/app_dev.php/get'+id, {
+    return fetch('http://sa/web/app_dev.php/get/'+id, {
         method: 'GET',
         mode:   'CORS'
     }).then(res => res.json())
@@ -27,4 +27,17 @@ export function createBlogPost(data) {
     }).then(res => {
         return res;
     }).catch(err => err)
+}
+
+export function updateBlogPost(id, data) {
+    return fetch('http://sa/web/app_dev.php/put/'+id, {
+        method: 'PUT',
+        mode:   'CORS',
+        body:   JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => {
+        return res;
+    }).catch(err => err);
 }

@@ -22,6 +22,9 @@ const Form = React.createClass({
         e.preventDefault();
         this.props.onSubmit(this.state);
     },
+    componentWillReceiveProps(props) {
+        this.setState(props);
+    },
     render() {
         return (
             <form name="blog_post" className="form-horizontal" onSubmit={this.handleSubmit}>
