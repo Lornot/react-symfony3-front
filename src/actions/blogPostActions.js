@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
 export function fetchBlogPost(id) {
-    return fetch('http://sa/web/app_dev.php/get/'+id, {
+    return fetch('http://sa/web/app_dev.php/posts/'+id, {
         method: 'GET',
         mode:   'CORS'
     }).then(res => res.json())
@@ -9,7 +9,7 @@ export function fetchBlogPost(id) {
 }
 
 export function fetchBlogPosts() {
-    return fetch('http://sa/web/app_dev.php/cget', {
+    return fetch('http://sa/web/app_dev.php/posts', {
         method: 'GET',
         mode:   'CORS'
     }).then(res => res.json())
@@ -17,7 +17,7 @@ export function fetchBlogPosts() {
 }
 
 export function createBlogPost(data) {
-    return fetch('http://sa/web/app_dev.php/post', {
+    return fetch('http://sa/web/app_dev.php/posts', {
         method: 'POST',
         mode: 'CORS',
         body: JSON.stringify(data),
@@ -30,7 +30,7 @@ export function createBlogPost(data) {
 }
 
 export function updateBlogPost(id, data) {
-    return fetch('http://sa/web/app_dev.php/put/'+id, {
+    return fetch('http://sa/web/app_dev.php/posts/'+id, {
         method: 'PUT',
         mode:   'CORS',
         body:   JSON.stringify(data),
@@ -43,7 +43,7 @@ export function updateBlogPost(id, data) {
 }
 
 export function deleteBlogPost(id) {
-    return fetch('http://sa/web/app_dev.php/delete/' + id, {
+    return fetch('http://sa/web/app_dev.php/posts/' + id, {
         method: 'DELETE',
         mode: 'CORS'
     }).then(res => res)
