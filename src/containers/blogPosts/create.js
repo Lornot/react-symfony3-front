@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import Form from '../../components/Form';
+import { withRouter } from 'react-router'
 import { createBlogPost } from '../../actions/blogPostActions';
 
 export default class Create extends Component {
 
     constructor(props) {
         super(props);
-
-        console.log(props.route);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
     handleSubmit(data) {
-
-
         createBlogPost(data)
         .then(res => {
-            this.props.route.push("/").bind(this);
+            this.props.router.push("/").bind(this);
         });
     }
 
